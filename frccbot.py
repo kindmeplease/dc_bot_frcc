@@ -1,3 +1,18 @@
+name: Example Workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Run Discord Bot
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+        run: python your_script.py
 import discord
 from discord.ext import commands
 
@@ -63,4 +78,4 @@ async def hello(ctx):
     await ctx.send('Hello!')
 
 # 用您的令牌啟動機器人
-bot.run('MTI4OTU4OTkzMDAyMDA0NDg2MQ.G4FFxp.IRylttzRUKwZFW0o-aYC7ckkkoRs80yQO6Giic')
+bot.run(DISCORD_TOKEN)
