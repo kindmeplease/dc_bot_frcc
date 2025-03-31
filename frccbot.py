@@ -13,6 +13,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user}')#不重要
+    await asyncio.sleep(5)  # 防止剛啟動時頻繁請求
 
 @bot.event
 async def on_message(message):
