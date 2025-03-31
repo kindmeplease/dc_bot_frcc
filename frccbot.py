@@ -1,7 +1,8 @@
+import keep_alive
 import discord
 from discord.ext import commands
 import os
-TOKEN = os.getenv('DISCORD_TOKEN')
+my_secret = os.environ['DISCORD_TOKEN']
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -63,6 +64,6 @@ async def on_member_join(member):
 @bot.command()
 async def hello(ctx):
     await ctx.send('Hello!')
-
 # 用您的令牌啟動機器人
-bot.run(TOKEN)
+keep_alive.keep_alive()
+bot.run(my_secret)
