@@ -2,7 +2,7 @@ import keep_alive
 import discord
 from discord.ext import commands
 import os
-my_secret = os.environ['DISCORD_TOKEN']
+my_secret = os.getenv['DISCORD_TOKEN']
 
 intents = discord.Intents.default()
 intents.message_content = True
