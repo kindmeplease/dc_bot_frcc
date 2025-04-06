@@ -197,4 +197,5 @@ async def hello(ctx):
     await ctx.send('Hello!')
 
 #keep_alive.keep_alive()
+keep_alive.keep_alive()
 bot.run(my_secret)
